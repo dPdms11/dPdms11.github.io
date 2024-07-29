@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import About from './pages/About';
@@ -9,7 +9,7 @@ import NavBar from './components/NavBar';
 import PhotoEditor from './pages/projects/PhotoEditor';
 import Notes from './pages/projects/Notes';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: '/',
     element: <Home />,
@@ -40,12 +40,12 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <div className='body'>
+    <>
       <NavBar />
       <div className='flex flex-col sm:flex-row sm:justify-around items-center sm:items-start h-screen w-screen px-10 py-20'>
         <RouterProvider router={router} />
       </div>
-    </div>
+    </>
   );
 }
 
